@@ -9,13 +9,14 @@ import TextField from "@mui/material/TextField";
 
 
 function App() {
-  const [countryInfo, setCountryInfo] 
-  = useState<undefined | any>(undefined);
-    const [cityName, setCityName] =  useState("");
+  const [countryInfo, setCountryInfo] = useState<undefined | any>(undefined);
+  const [cityName, setCityName] =  useState("");
   const axios = require("axios");
+
   return (
     <div id = "full" className="App">
-      <h1>Country Information</h1>
+      <h1 id = "intro">Country Information</h1>
+
       <div>
         <TextField
           id="search-bar"
@@ -38,38 +39,42 @@ function App() {
         </IconButton>
       </div>
 
-      {/* <p>
-        You have entered {cityName.toUpperCase()}
-      </p> */}
-
-      <div id="background"></div>
-    
     {countryInfo === undefined || countryInfo.flag.file === null?
-(
-  <p>
+    (
+        <p>
       <div id ='atmosphere'>
-      <div id="earth"></div>
+        <div id="earth"></div>
       </div>
-        Country not found
-    </p>
-) :(
-    <div>
-      <img id = "flagLeft" src= {countryInfo.flag.file}/>
-      <span id="Country-result">
-      <p id="Name"><mark>Country: {countryInfo.name}</mark></p>
-      <p id= "Capital">
-        <mark>Capital City: {countryInfo.capital.name}</mark>
-      </p>  
-      <p id = "Population">
-        <mark>Population: {(countryInfo.population / 1000000).toFixed(2)} million</mark>
-      </p>
-      <p id = "Currency">
-        <mark>Currency: {countryInfo.currency.name}</mark>
-      </p>
-      <a id = "wiki" href= {countryInfo.wiki_url} > {countryInfo.name} wiki </a>
-       </span></div>
-  )}
-            </div>
+            Country not found
+        </p>
+
+    ) : (
+
+      <div>
+
+          <img id = "flag" src= {countryInfo.flag.file}/>
+          <span id="Country-result">
+          <p>
+            <mark id = "text-size">Country: {countryInfo.name}</mark>
+          </p>
+          <p>
+            <mark id = "text-size">Capital City: {countryInfo.capital.name}</mark>
+          </p>  
+          <p>
+            <mark id = "text-size">Population: {(countryInfo.population / 1000000).toFixed(2)} million</mark>
+          </p>
+          <p>
+            <mark id = "text-size">Currency: {countryInfo.currency.name}</mark>
+          </p>
+          <a href= {countryInfo.wiki_url} id = "text-size"> {countryInfo.name} wiki </a>
+          </span>
+
+        <div id ='atmosphere'>
+          <div id="earth"></div>
+      </div>
+      </div>
+    )}
+  </div>
   )
   
   function search(){
@@ -96,4 +101,3 @@ export default App;
 function round(arg0: number, arg1: number): React.ReactNode {
   throw new Error('Function not implemented.');
 }
-
