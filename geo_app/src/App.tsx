@@ -21,6 +21,7 @@ function App() {
         <TextField
           id="search-bar"
           className="text"
+          role="text"
           value={cityName}
           onChange={(prop: any)=> {setCityName(prop.
             target.value)
@@ -31,11 +32,12 @@ function App() {
           size = "small"
           />
         <IconButton id="search-box"
+
         aria-label='Search'
         onClick={() =>{
           search();
         }}> 
-          <SearchIcon style={{fill: "white"}} />
+          <SearchIcon style={{fill: "white"}} role="search-button" />
         </IconButton>
       </div>
 
@@ -58,7 +60,7 @@ function App() {
             <mark id = "text-size">Country: {countryInfo.name}</mark>
           </p>
           <p>
-            <mark id = "text-size">Capital City: {countryInfo.capital.name}</mark>
+            <mark role="quicktest"id = "text-size">Capital City: {countryInfo.capital.name}</mark>
           </p>  
           <p>
             <mark id = "text-size">Population: {(countryInfo.population / 1000000).toFixed(2)} million</mark>
