@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import Enzyme, { shallow} from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
+// import Adapter from "enzyme-adapter-react-16";
 
 
 import App from './App';
@@ -24,8 +24,8 @@ test('can view country not found', () => {
 //   // expect(linkElement).toBeInTheDocument();
 // });
 
-test('can view country not found', () => {
-  // render(<App />);
-  const wrapper = shallow(<App />);
-  console.log(wrapper.find('TextField').debug());
-});
+// test('can view country not found', () => {
+//   // render(<App />);
+//   const wrapper = shallow(<App />);
+//   console.log(wrapper.find('TextField').debug());
+// });
