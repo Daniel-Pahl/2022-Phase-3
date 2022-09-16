@@ -1,3 +1,3 @@
 ### Installs needed
-npm install axios \n
-npm install @mui/material @emotion/react @emotion/styled @mui/icons-material
+- npm install axios
+- npm install @mui/material @emotion/react @emotion/styled @mui/icons-material
